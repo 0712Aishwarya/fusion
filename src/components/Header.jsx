@@ -7,59 +7,48 @@ const Header = () => {
   const [show, setShow] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-[#f3ebe0] px-4 py-2 md:py-2 border-b border-gray-300">
-      <div className="max-w-[1500px] mx-auto flex justify-between items-center">
-        
-        {/* Logo Section */}
-        <div className="flex items-center">
-          <img src={logo} alt="Logo" className="h-12 md:h-16 object-contain" />
-          <h1 className="text-[#7B3F00]">Fusion Planner</h1>
-        </div>
+    <>
+      {/* Navigation Bar */}
+      <nav className="fixed top-0 left-0 w-full z-50 bg-[#f3ebe0] border-b border-gray-300">
+        <div className="max-w-[1500px] mx-auto flex justify-between items-center px-4 py-2 md:py-4">
+          {/* Logo */}
+          <div className="flex items-center gap-4">
+            <img src={logo} alt="Logo" className="h-12 md:h-16 object-contain" />
+            <h1 className="text-[#2f1c08] text-2xl md:text-3xl font-semibold">
+              Fusion Planner
+            </h1>
+          </div>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex gap-10 text-xl font-light tracking-wide">
-          <Link to="hero" spy={true} smooth={true} duration={500} className="cursor-pointer hover:text-gray-600">
-            HOME
-          </Link>
-          <Link to="services" spy={true} smooth={true} duration={500} className="cursor-pointer hover:text-gray-600">
-            SERVICES
-          </Link>
-          <Link to="about" spy={true} smooth={true} duration={500} className="cursor-pointer hover:text-gray-600">
-            ABOUT
-          </Link>
-          <Link to="contact" spy={true} smooth={true} duration={500} className="cursor-pointer hover:text-gray-600">
-            CONTACT
-          </Link>
-        </div>
+          {/* Desktop Links */}
+          <div className="hidden md:flex gap-8 text-xl text-[#2f1c08]">
+            <Link to="home" spy={true} smooth={true} duration={500} className="hover:underline cursor-pointer">HOME</Link>
+            <Link to="services" spy={true} smooth={true} duration={500} className="hover:underline cursor-pointer">SERVICES</Link>
+            <Link to="about" spy={true} smooth={true} duration={500} className="hover:underline cursor-pointer">ABOUT</Link>
+            <Link to="contact" spy={true} smooth={true} duration={500} className="hover:underline cursor-pointer">CONTACT</Link>
+          </div>
 
-        {/* Hamburger Icon */}
-        <div className="md:hidden cursor-pointer" onClick={() => setShow(!show)}>
-          <GiHamburgerMenu size={28} />
+          {/* Hamburger Icon */}
+          <button
+            className="md:hidden text-3xl text-[#2f1c08]"
+            onClick={() => setShow(!show)}
+          >
+            <GiHamburgerMenu />
+          </button>
         </div>
-      </div>
+      </nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu (below hero) */}
       <div
-        className={`md:hidden flex flex-col bg-[#a2783a] text-white absolute top-full left-0 w-full transition-all duration-300 z-20 rounded-t-md ${
-          show ? "translate-y-0" : "-translate-y-[300px]"
+        className={`md:hidden transition-all duration-300 w-full bg-[#a2783a] text-white text-lg py-4 shadow-md fixed left-0 z-40 ${
+          show ? "top-[80px] opacity-100 visible" : "top-[-300px] opacity-0 invisible"
         }`}
       >
-        <div className="flex flex-col items-center py-4 gap-4 text-lg">
-          <Link to="hero" spy={true} smooth={true} duration={500} onClick={() => setShow(false)} className="cursor-pointer">
-            HOME
-          </Link>
-          <Link to="services" spy={true} smooth={true} duration={500} onClick={() => setShow(false)} className="cursor-pointer">
-            SERVICES
-          </Link>
-          <Link to="about" spy={true} smooth={true} duration={500} onClick={() => setShow(false)} className="cursor-pointer">
-            ABOUT
-          </Link>
-          <Link to="contact" spy={true} smooth={true} duration={500} onClick={() => setShow(false)} className="cursor-pointer">
-            CONTACT
-          </Link>
-        </div>
+        <Link to="hero" spy={true} smooth={true} duration={500} onClick={() => setShow(false)} className="block py-2 text-center">HOME</Link>
+        <Link to="services" spy={true} smooth={true} duration={500} onClick={() => setShow(false)} className="block py-2 text-center">SERVICES</Link>
+        <Link to="about" spy={true} smooth={true} duration={500} onClick={() => setShow(false)} className="block py-2 text-center">ABOUT</Link>
+        <Link to="contact" spy={true} smooth={true} duration={500} onClick={() => setShow(false)} className="block py-2 text-center">CONTACT</Link>
       </div>
-    </nav>
+    </>
   );
 };
 

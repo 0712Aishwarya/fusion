@@ -1,8 +1,10 @@
 import React from 'react';
 import { FaMapMarkerAlt } from 'react-icons/fa';
+import { Element } from 'react-scroll';
 
 function Contact() {
   return (
+    <Element name="contact">
     <section className="w-full px-4 py-10 bg-[#f3f3ed] flex justify-center">
       <form className="bg-white shadow-lg rounded-xl p-6 w-full max-w-sm space-y-4">
         
@@ -27,12 +29,20 @@ function Contact() {
             className="w-full outline-none bg-transparent px-2 text-gray-700 py-2"
           />
         </div>
+        {/* loaction */}
+        <div className="border border-gray-300 rounded-md flex items-center p-2">
+          <input
+            type="text"
+            placeholder="Enter your location"
+            className="w-full outline-none bg-transparent px-2 text-gray-700"
+          />
+        </div>
 
         {/* Service Dropdown */}
         <div className="border border-gray-300 rounded-md flex items-center p-2">
           <FaMapMarkerAlt className="text-gray-500" />
           <select className="w-full outline-none bg-transparent px-2 text-gray-700">
-            <option value="">Select event location</option>
+            <option value="">Select event service</option>
             <option value="wedding">Wedding Planning</option>
             <option value="decor">Event Decoration</option>
             <option value="catering">Catering Services</option>
@@ -48,6 +58,7 @@ function Contact() {
         </button>
       </form>
     </section>
+    </Element>
   );
 }
 

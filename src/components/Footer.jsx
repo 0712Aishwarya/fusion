@@ -7,106 +7,77 @@ import {
   Send,
   Twitter,
 } from "lucide-react";
+import logo from "../assets/logo.png"
+import { Link } from "react-scroll";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#d7d5c8] text-[black] px-5 py-12 flex justify-center">
-      <div className="max-w-[1200px] w-full flex flex-col gap-12">
-        {/* Title Section */}
-        <div className="text-center">
-          <h1 className="text-4xl font-normal tracking-[3px] font-serif">EVENT</h1>
-          <p className="text-[#7B3F00] text-2xl font-[Alex Brush, cursive]">Events and Weddings</p>
-        </div>
+    <footer className="bg-[#d7d5c8] text-black px-5 py-12 flex justify-center">
+  <div className="max-w-[1200px] w-full flex flex-col gap-12">
+    {/* Logo & Title */}
+    <div className="text-center flex flex-col items-center">
+      <img src={logo} alt="Logo" className="h-14 md:h-20 object-contain mb-3" />
+      <h1 className="text-3xl md:text-4xl font-normal tracking-wide font-serif">
+        Fusion Planner
+      </h1>
+      <p className="text-[#7B3F00] text-xl md:text-2xl font-[Alex Brush, cursive] mt-1">
+        Events and Weddings
+      </p>
+    </div>
 
-        {/* Content Grid */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {/* Newsletter */}
-          <div>
-            <h2 className="mb-4 text-2xl font-bold tracking-wide">Stay Connected</h2>
-            <p className="mb-4 text-black /80">
-              Join our newsletter for the latest updates and exclusive offers.
-            </p>
-            <div className="relative">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full rounded-lg px-3 py-2 bg-transparent border border-[#7B3F00] text-[#7B3F00] placeholder:text-[#7B3F00]/80 pr-12"
-              />
-              <button
-                type="submit"
-                className="absolute right-1 top-1 h-8 w-8 flex items-center justify-center rounded-full bg-[#7B3F00] text-white hover:scale-105 transition-transform"
-              >
-                <Send className="h-4 w-4" />
-              </button>
-            </div>
-          </div>
+    {/* Main Grid Content */}
+    <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+      {/* Quick Links */}
+      <div>
+        <h3 className="mb-4 text-xl font-semibold text-[#7B3F00]">Quick Links</h3>
+        <nav className="space-y-2 text-sm">
+          <Link to="home" className="block hover:text-[#a2783a] transition-colors cursor-pointer">Home</Link>
+          <Link to="services" className="block hover:text-[#a2783a] transition-colors cursor-pointer">Services</Link>
+          <Link to="about" className="block hover:text-[#a2783a] transition-colors cursor-pointer">About</Link>
+          <Link to="contact" className="block hover:text-[#a2783a] transition-colors cursor-pointer">Contact</Link>
+        </nav>
+      </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="mb-4 text-lg font-semibold text-[#7B3F00]">Quick Links</h3>
-            <nav className="space-y-2 text-sm">
-              <a href="#" className="block hover:text-[#a2783a] transition-colors">Home</a>
-              <a href="#" className="block hover:text-[#a2783a] transition-colors">About Us</a>
-              <a href="#" className="block hover:text-[#a2783a] transition-colors">Services</a>
-              <a href="#" className="block hover:text-[#a2783a] transition-colors">Products</a>
-              <a href="#" className="block hover:text-[#a2783a] transition-colors">Contact</a>
-            </nav>
-          </div>
+      {/* Contact Info */}
+      <div>
+        <h3 className="mb-4 text-xl font-semibold text-[#7B3F00]">Contact Us</h3>
+        <address className="space-y-2 text-sm not-italic leading-relaxed">
+          <p>CL-7 Rashmi Palace, Market Xing, Sultanganj,<br />Bypass Rd, Kamla Nagar, Agra, Uttar Pradesh 282005</p>
+          <p>Phone: <a href="tel:+917455840042" className="hover:text-[#7B3F00] transition">+91 7455840042</a></p>
+          <p>Email: <a href="mailto:fusionplanners08@gmail.com" className="hover:text-[#7B3F00] transition">fusionplanners08@gmail.com</a></p>
+        </address>
+      </div>
 
-          {/* Contact Info */}
-          <div>
-            <h3 className="mb-4 text-lg font-semibold text-[#7B3F00]">Contact Us</h3>
-            <address className="space-y-2 text-sm not-italic">
-              <p>123 Innovation Street</p>
-              <p>Tech City, TC 12345</p>
-              <p>Phone: (123) 456-7890</p>
-              <p>Email: hello@example.com</p>
-            </address>
-          </div>
-
-          {/* Social Media */}
-          <div>
-            <h3 className="mb-4 text-lg font-semibold text-[#7B3F00]">Follow Us</h3>
-            <div className="flex space-x-4">
-              <a
-                href="#"
-                aria-label="Facebook"
-                className="rounded-full p-2 border border-[#7B3F00] hover:bg-[#7B3F00] hover:text-white transition"
-              >
-                <Facebook className="h-4 w-4" />
-              </a>
-              <a
-                href="#"
-                aria-label="Twitter"
-                className="rounded-full p-2 border border-[#7B3F00] hover:bg-[#7B3F00] hover:text-white transition"
-              >
-                <Twitter className="h-4 w-4" />
-              </a>
-              <a
-                href="#"
-                aria-label="Instagram"
-                className="rounded-full p-2 border border-[#7B3F00] hover:bg-[#7B3F00] hover:text-white transition"
-              >
-                <Instagram className="h-4 w-4" />
-              </a>
-              <a
-                href="#"
-                aria-label="LinkedIn"
-                className="rounded-full p-2 border border-[#7B3F00] hover:bg-[#7B3F00] hover:text-white transition"
-              >
-                <Linkedin className="h-4 w-4" />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Footer Bottom */}
-        <div className="mt-3 border-t pt-6 flex flex-col md:flex  justify-items-center items-center gap-4 text-sm text-[black]/80">
-         
-       <p>Developed by Aishwarya</p>
+      {/* Social Media */}
+      <div>
+        <h3 className="mb-4 text-xl font-semibold text-[#7B3F00]">Follow Us</h3>
+        <div className="flex space-x-4">
+          <a
+            href="https://www.facebook.com/share/1ZLz6TLTj3/?mibextid=wwXIfr"
+            aria-label="Facebook"
+            className="rounded-full p-2 border border-[#7B3F00] hover:bg-[#7B3F00] hover:text-white transition"
+          >
+            <Facebook className="h-5 w-5" />
+          </a>
+          <a
+            href="https://www.instagram.com/fusionplanners_nishchal_jain?igsh=b21jZ25tdmZrdTNp&utm_source=qr"
+            aria-label="Instagram"
+            className="rounded-full p-2 border border-[#7B3F00] hover:bg-[#7B3F00] hover:text-white transition"
+          >
+            <Instagram className="h-5 w-5" />
+          </a>
         </div>
       </div>
-    </footer>
+    </div>
+
+    {/* Footer Bottom */}
+    <div className="mt-8 border-t pt-6 flex flex-col items-center text-sm text-black/70">
+      <p>© {new Date().getFullYear()} Fusion Planner — All rights reserved</p>
+      <p>Developed by Aishwarya</p>
+    </div>
+  </div>
+</footer>
+
   );
 };
 
